@@ -1,7 +1,5 @@
 # Informe a data da pascoa em qualquer ano digitado
 
-# Crie uma função em assembly que dada uma data de nascimento informe o dia da semana que a pessoa nasceu. (ano bissexto)
-
 .data
 
 p1:	.asciiz "Digite um ano: "
@@ -52,17 +50,7 @@ main:
 	add $15, $11, $22 #$15 = (b + 8)
 	addi $22, $0, 25
 	div $15, $22 # (b + 8) \ 25
-	mflo $15 #$15 = (b + 8) \ 25
-	
-#   g $16 = (b$11 - f$15 + 1) \ 3
-#   h $17 = MOD((19 × a$10 + b$11 - d$13 - g$16 + 15);30)
-#   i $18 = c$12 \ 4
-#   k $19 = MOD(c;4)
-#   l $20 = MOD((32 + 2 × e$14 + 2 × i$18 - h$17 - k$19);7)
-#   m $21 = (a$10 + 11 × h$17 + 22 × L$20) \ 451
-#   MÊS($10) = (h$17 + L$20 - 7 × m$21 + 114) \ 31
-#   DIA($9) = MOD((h$17 + L$20 - 7 × m$21 + 114);31) + 1
-	
+	mflo $15 #$15 = (b + 8) \ 25	
 	addi $22, $0, 3
 	addi $16, $15, 1 #f + 1
 	sub $16, $11, $16 #b -(f + 1)
@@ -81,12 +69,6 @@ main:
 	div $12, $22 #c/4
 	mflo $18 #$18 = c \ 4
 	mfhi $19 #$19 = MOD(c;4)
-	
-#   l $20 = MOD((32 + 2 × e$14 + 2 × i$18 - h$17 - k$19);7)
-#   m $21 = (a$10 + 11 × h$17 + 22 × L$20) \ 451
-#   MÊS($9) = (h$17 + L$20 - 7 × m$21 + 114) \ 31
-#   DIA($8) = MOD((h$17 + L$20 - 7 × m$21 + 114);31) + 1
-
 	addi $22, $0, 2
 	mul $20, $22, $14 #2 * e
 	mul $23, $22, $18 #2 * i
@@ -106,10 +88,6 @@ main:
 	addi $22, $0, 451
 	div $21, $22 #(a + 11 × h + 22 × L)/451
 	mflo $21
-
-#   MÊS($9) = (h$17 + L$20 - 7 × m$21 + 114) \ 31
-#   DIA($8) = MOD((h$17 + L$20 - 7 × m$21 + 114);31) + 1
-
 	addi $22, $0, 7
 	mul $23, $22, $21 # 7 * m
 	add $9, $17, $20 # h + l
