@@ -1,4 +1,4 @@
-assembly
-========
+IFRN
+Curso de Analise e Desenvolvimento de Sistemas
 
-Arquitetura de Computadores
+Discplipina: Arquitetura de Computadores
