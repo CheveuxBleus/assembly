@@ -2,4 +2,4 @@
 
 Curso de Analise e Desenvolvimento de Sistemas
 
-Discplipina: Arquitetura de Computadores
+Disciplipina: Arquitetura de Computadores
